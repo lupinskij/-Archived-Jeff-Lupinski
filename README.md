@@ -31,3 +31,9 @@ $ npm run clean
 ```bash
 $ npm run build
 ```
+
+## Deployment
+```bash
+$ npm run deploy
+```
+Source branch is the development branch because gh-pages needs master to publish
