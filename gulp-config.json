@@ -46,6 +46,10 @@
     "src": "assets/images/**/*",
     "dest": "public/images"
   },
+  "cname": {
+    "src": "./CNAME",
+    "dest": "public/"
+  },
   "sprites": {
     "svg": {
       "src": "assets/images/sprites/**/*",

@@ -32,6 +32,7 @@ gulp.task('server', [
   'jade.templates',
   'images',
   'sprites',
+  'cname',
   'stylesheets.project',
   'scripts.project',
   'scripts.vendor',
@@ -84,6 +85,11 @@ gulp.task('jade.templates', () => {
 gulp.task('images', () => {
   return gulp.src(config.images.src)
     .pipe(gulp.dest(config.images.dest));
+});
+
+gulp.task('cname', () => {
+  return gulp.src(config.cname.src)
+    .pipe(gulp.dest(config.cname.dest));
 });
 
 gulp.task('scripts.project', () => {
@@ -187,6 +193,7 @@ gulp.task('watch', () => {
   gulp.watch(config.jade.templates.src, ['jade.templates']);
   gulp.watch(config.images.src, ['images']);
   gulp.watch(config.sprites.svg.src, ['sprites']);
+  gulp.watch(config.cname.src, ['cname']);
   gulp.watch(config.scripts.project.watch, ['scripts.project']);
   gulp.watch(config.scripts.vendor.src, ['scripts.vendor']);
   gulp.watch(config.styles.project.watch, ['stylesheets.project']);
@@ -197,6 +204,7 @@ gulp.task('build', [
   'jade.templates',
   'images',
   'sprites',
+  'cname',
   'stylesheets.project',
   'scripts.project',
   'scripts.vendor'
