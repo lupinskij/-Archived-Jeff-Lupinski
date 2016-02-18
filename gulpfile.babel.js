@@ -29,7 +29,6 @@ const locals = {
 
 gulp.task('server', [
   'jade.views',
-  'jade.templates',
   'images',
   'sprites',
   'cname',
@@ -63,21 +62,6 @@ gulp.task('jade.views', () => {
     .pipe($.if(!production, $.notify({
       title: 'Sucess',
       message: 'Views compiled'
-    })));
-});
-
-gulp.task('jade.templates', () => {
-  return gulp.src(config.jade.templates.src)
-    .pipe($.jade({
-      client: true
-    }))
-    .pipe($.jadeTemplateConcat('templates.js', {
-      templateVariable: 'templates'
-    }))
-    .pipe(gulp.dest(config.scripts.dest))
-    .pipe($.if(!production, $.notify({
-      title: 'Sucess',
-      message: 'Templates compiled'
     })));
 });
 
@@ -177,7 +161,6 @@ gulp.task('test', ['lint', 'style']);
 
 gulp.task('watch', () => {
   gulp.watch(config.jade.views.src, ['jade.views']);
-  gulp.watch(config.jade.templates.src, ['jade.templates']);
   gulp.watch(config.images.src, ['images']);
   gulp.watch(config.sprites.svg.src, ['sprites']);
   gulp.watch(config.cname.src, ['cname']);
@@ -187,7 +170,6 @@ gulp.task('watch', () => {
 
 gulp.task('build', [
   'jade.views',
-  'jade.templates',
   'images',
   'sprites',
   'cname',

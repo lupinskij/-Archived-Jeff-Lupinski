@@ -6,9 +6,6 @@
       "base": "views",
       "src": "views/**/*.jade",
       "open": "index.html"
-    },
-    "templates": {
-      "src": "views/templates/**/*.jade"
     }
   },
   "scripts": {
