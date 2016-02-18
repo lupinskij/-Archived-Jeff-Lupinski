@@ -35,7 +35,6 @@ gulp.task('server', [
   'cname',
   'stylesheets.project',
   'scripts.project',
-  'scripts.vendor',
   'watch'
 ], () => {
   gulp.src(config.build)
@@ -114,18 +113,6 @@ gulp.task('scripts.project', () => {
     })));
 });
 
-gulp.task('scripts.vendor', () => {
-  return gulp.src(config.scripts.vendor.src)
-    .pipe($.flatten())
-    .pipe($.if(production, $.uglify()))
-    .pipe($.concat(config.scripts.vendor.out))
-    .pipe(gulp.dest(config.scripts.dest))
-    .pipe($.if(!production, $.notify({
-      title: 'Sucess',
-      message: 'Vendor scripts compiled'
-    })));
-});
-
 gulp.task('stylesheets.project', ['stylesheets.vendor'], () => {
   return gulp.src(config.styles.project.src)
     .pipe($.stylus({
@@ -195,7 +182,6 @@ gulp.task('watch', () => {
   gulp.watch(config.sprites.svg.src, ['sprites']);
   gulp.watch(config.cname.src, ['cname']);
   gulp.watch(config.scripts.project.watch, ['scripts.project']);
-  gulp.watch(config.scripts.vendor.src, ['scripts.vendor']);
   gulp.watch(config.styles.project.watch, ['stylesheets.project']);
 });
 
@@ -207,7 +193,6 @@ gulp.task('build', [
   'cname',
   'stylesheets.project',
   'scripts.project',
-  'scripts.vendor'
 ], () => {
   process.exit(0);
 });
