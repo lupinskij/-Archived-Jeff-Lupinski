@@ -1,6 +1,5 @@
-Schwill - Boilerplate
+www.jefflupinski.com
 =======
-[![Build Status](https://travis-ci.org/schwill/boilerplate.svg?branch=master)](https://travis-ci.org/schwill/boilerplate)
 
 ## Installation
 Install [node.js & npm](http://blog.npmjs.org/post/85484771375/how-to-install-npm)
@@ -11,8 +10,6 @@ $ npm i -g gulp
 
 ## Initial Setup
 ```bash
-$ git clone git@github.com:schwill/boilerplate.git
-$ cd boilerplate
 $ bower i && npm i
 $ touch .env
 ```
@@ -33,7 +30,7 @@ $ npm run build
 ```
 
 ## Deployment
+Source branch is the development branch because gh-pages needs master to publish
 ```bash
 $ npm run deploy
 ```
-Source branch is the development branch because gh-pages needs master to publish
