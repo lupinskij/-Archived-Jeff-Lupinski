@@ -1,3 +1,27 @@
+above($above, $vertical = false)
+  if $vertical
+    @media screen and (min-height: $above)
+      {block}
+  else
+    @media screen and (min-width: $above)
+      {block}
+
+below($below, $vertical = false)
+  if $vertical
+    @media screen and (max-height: $below)
+      {block}
+  else
+    @media screen and (max-width: $below)
+      {block}
+
+between($low, $high, $vertical = false)
+  if $vertical
+    @media screen and (min-height: $low) and (max-height: $high)
+      {block}
+  else
+    @media screen and (min-width: $low) and (max-width: $high)
+      {block}
+
 $ieSprite = ".lt-ie9"
 $spriteMap = $icons.sprite
 
