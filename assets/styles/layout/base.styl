@@ -17,16 +17,18 @@ body
   -webkit-font-smoothing: antialiased
   background-color: $color-shade
   color: white
-  font-family: 'effra', 'Franklin Gothic', 'ITC Franklin Gothic', Helvetica, Arial, 'Lucida Grande', sans-serif
+  font-family: 'effra', 'Franklin Gothic', 'ITC Franklin Gothic', Helvetica, Arial, "Lucida Grande", sans-serif
   font-smoothing: always
   text-rendering: optimizeLegibility
 
 .content-wrap
   height: 100%
-  padding: 25px
+  padding: 15px
   position: relative
   width: 100%
   z-index: 1
+  @media (min-width: $screen-medium)
+    padding: 25px
 
 .content,
 .content-inner
@@ -38,10 +40,11 @@ body
   padding: 25px
 
 .content
-  padding: 0 100px
   position: relative
   top: 48%
   transform: translateY(-50%)
+  @media (min-width: $screen-medium)
+    padding: 0 100px
 
 .pane
   animation-name: animatePane
@@ -78,6 +81,10 @@ h1
   font-weight: 700
   text-transform: uppercase
   transform: translate3d(0, -1.75em, 0)
+  @media (min-width: $screen-large)
+    font-size: 24px
+  @media (min-width: $screen-xlarge)
+    font-size: 30px
 
 h2
   animation-delay: 1.35s
@@ -85,43 +92,58 @@ h2
   animation-fill-mode: forwards
   animation-name: animateTitle
   animation-timing-function: ease
-  font-size: 36px
+  font-size: 26px
   font-weight: 900
   margin-top: 0
   max-width: 500px
-  transform: translate3d(0, -5em, 0)
+  transform: translate3d(0, -6em, 0)
+  @media (min-width: $screen-medium)
+    font-size: 36px
+    max-width: 75%
+  @media (min-width: $screen-large)
+    font-size: 42px
+    max-width: 60%
+  @media (min-width: $screen-xlarge)
+    font-size: 46px
+    max-width: 50%
 
 .social-list
   list-style: none
   margin: 40px 0 0
   padding: 0
+  @media (min-width: $screen-large)
+    margin: 20px 0 0
 
 .social-item
-  animation-duration: .5s
-  animation-fill-mode: forwards
-  animation-name: animateLink
-  animation-timing-function: ease-in
-  display: inline-block
-  margin-right: 20px
-  transform: translate3d(0, -1.75em, 0)
-  &:last-child
-    margin: 0
-  &:nth-child(1)
+  margin: 0 0 10px 0
+  @media (min-width: $screen-medium)
+    display: inline-block
+    margin: 0 20px 0 0
+    &:last-child
+      margin: 0
+  &:nth-child(1) a
     animation-delay: 1.50s
-  &:nth-child(2)
+  &:nth-child(2) a
     animation-delay: 1.65s
-  &:nth-child(3)
+  &:nth-child(3) a
     animation-delay: 1.80s
-  &:nth-child(4)
+  &:nth-child(4) a
     animation-delay: 1.95s
   a
+    animation-duration: .5s
+    animation-fill-mode: forwards
+    animation-name: animateLink
+    animation-timing-function: ease-in
     color: $color-tint
     display: inline-block
-    font-size: 18px
+    font-size: 16px
     font-weight: 700
     text-decoration: none
     text-transform: uppercase
     position: relative
+    transform: translate3d(0, -1.75em, 0)
+    @media (min-width: $screen-medium)
+      font-size: 20px
     &:hover
       color: lighten($color-tint, 30%)
       transition: color .15s linear
