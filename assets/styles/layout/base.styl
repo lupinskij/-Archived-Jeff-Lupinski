@@ -11,12 +11,12 @@ main
 
 html
   box-sizing: border-box
+  font-size: 62.5%
 
 body
   -moz-osx-font-smoothing: grayscale
   -webkit-font-smoothing: antialiased
   background-color: $color-shade
-  color: white
   font-family: 'effra', 'Franklin Gothic', 'ITC Franklin Gothic', Helvetica, Arial, "Lucida Grande", sans-serif
   font-smoothing: always
   text-rendering: optimizeLegibility
@@ -70,6 +70,21 @@ body
     animation-delay: .23s
     left: 75%
 
+.logo
+  animation-delay: 2.3s
+  animation-duration: 1s
+  animation-fill-mode: forwards
+  animation-name: animateLogo
+  animation-timing-function: ease
+  height: auto
+  max-width: 80%
+  opacity: 0
+  position: absolute
+  top: -10em
+  @media (min-width: $screen-medium)
+    left: 2em
+    max-width: 100%
+
 h1
   animation-delay: 1s
   animation-duration: .3s
@@ -77,14 +92,14 @@ h1
   animation-name: animateTitle
   animation-timing-function: ease
   color: $color-primary
-  font-size: 18px
+  font-size: 1.8rem
   font-weight: 700
+  letter-spacing: 0.1em
+  opacity: 0
   text-transform: uppercase
   transform: translate3d(0, -1.75em, 0)
   @media (min-width: $screen-large)
-    font-size: 24px
-  @media (min-width: $screen-xlarge)
-    font-size: 30px
+    font-size: 2.0rem
 
 h2
   animation-delay: 1.35s
@@ -92,27 +107,27 @@ h2
   animation-fill-mode: forwards
   animation-name: animateTitle
   animation-timing-function: ease
-  font-size: 26px
-  font-weight: 900
-  margin-top: 0
+  color: $color-highlight
+  font-family: 'lust', serif
+  font-size: 2.6rem
+  font-weight: normal
+  margin-top: 0.25em
   max-width: 500px
+  opacity: 0
   transform: translate3d(0, -6em, 0)
   @media (min-width: $screen-medium)
-    font-size: 36px
-    max-width: 75%
+    font-size: 3.0rem
+    max-width: 500px
   @media (min-width: $screen-large)
-    font-size: 42px
-    max-width: 60%
-  @media (min-width: $screen-xlarge)
-    font-size: 46px
-    max-width: 50%
+    font-size: 4.0rem
+    max-width: 650px
 
 .social-list
   list-style: none
-  margin: 40px 0 0
+  margin: 30px 0 0
   padding: 0
   @media (min-width: $screen-large)
-    margin: 20px 0 0
+    margin: 1em 0 0
 
 .social-item
   margin: 0 0 10px 0
@@ -137,15 +152,15 @@ h2
     animation-timing-function: ease-in
     color: $color-tint
     display: inline-block
-    font-size: 16px
+    font-size: 1.6rem
     font-weight: 700
+    letter-spacing: 0.1em
+    opacity: 0
     position: relative
     text-decoration: none
     text-transform: uppercase
     transform: translate3d(0, -1.75em, 0)
     transition: color 0.35s
-    @media (min-width: $screen-medium)
-      font-size: 20px
     &:after
       background: $color-primary
       content: ''
@@ -160,7 +175,7 @@ h2
     &:hover
       color: lighten($color-tint, 40%)
       &:after
-        height: 3px
+        height: 2px
         opacity: 1
         transform: translateY(0px)
 
