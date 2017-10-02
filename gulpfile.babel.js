@@ -29,7 +29,7 @@ const locals = {
 };
 
 gulp.task('server', () => {
-  run('sprites', [
+  run([
     'jade.views',
     'images',
     'cname',
@@ -121,20 +121,6 @@ gulp.task('stylesheets.vendor', () => {
     .pipe(gulp.dest(config.styles.vendor.dest));
 });
 
-gulp.task('svgSprites', () => {
-  return gulp.src(config.sprites.svg.src)
-    .pipe($.svgSprite(config.sprites.config))
-    .pipe(gulp.dest(config.sprites.svg.dest));
-});
-
-gulp.task('pngSprites', ['svgSprites'], () => {
-  return gulp.src(config.sprites.png.src)
-    .pipe($.svg2png())
-    .pipe(gulp.dest(config.sprites.png.dest));
-});
-
-gulp.task('sprites', ['pngSprites']);
-
 gulp.task('cname', () => {
   return gulp.src(config.cname.src)
     .pipe(gulp.dest(config.cname.dest));
@@ -164,14 +150,13 @@ gulp.task('test', ['lint', 'style']);
 gulp.task('watch', () => {
   gulp.watch(config.jade.views.src, ['jade.views']);
   gulp.watch(config.images.src, ['images']);
-  gulp.watch(config.sprites.svg.src, ['sprites']);
   gulp.watch(config.cname.src, ['cname']);
   gulp.watch(config.scripts.project.watch, ['scripts.project']);
   gulp.watch(config.styles.project.watch, ['stylesheets.project']);
 });
 
 gulp.task('build', () => {
-  run('sprites', [
+  run([
     'jade.views',
     'images',
     'cname',

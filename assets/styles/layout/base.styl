@@ -2,11 +2,13 @@
 *:before,
 *:after
   box-sizing: inherit
+  position: relative
 
 html,
 body,
 main
   height: 100%
+  overflow: auto
   width: 100%
 
 html
@@ -24,7 +26,6 @@ body
 .content-wrap
   height: 100%
   padding: 15px
-  position: relative
   width: 100%
   z-index: 1
   @media (min-width: $screen-medium)
@@ -32,19 +33,22 @@ body
 
 .content,
 .content-inner
-  position: relative
   width: 100%
 
 .content-inner
-  height: 100%
+  min-height: 100%
+  overflow: hidden
   padding: 25px
 
 .content
-  position: relative
-  top: 48%
-  transform: translateY(-50%)
+  margin-top: 5em
   @media (min-width: $screen-medium)
-    padding: 0 100px
+    left: 0
+    margin: 0
+    padding: 0 125px
+    position: absolute
+    top: 48%
+    transform: translateY(-50%)
 
 .pane
   animation-name: animatePane
@@ -77,13 +81,14 @@ body
   animation-name: animateLogo
   animation-timing-function: ease
   height: auto
-  max-width: 80%
+  max-width: 120px
   opacity: 0
   position: absolute
-  top: -10em
+  top: -5em
   @media (min-width: $screen-medium)
-    left: 2em
+    left: 5em
     max-width: 100%
+    top: -10em
 
 h1
   animation-delay: 1s
@@ -118,7 +123,7 @@ h2
   @media (min-width: $screen-medium)
     font-size: 3.0rem
     max-width: 500px
-  @media (min-width: $screen-large)
+  @media (min-width: $screen-medium)
     font-size: 4.0rem
     max-width: 650px
 
@@ -132,7 +137,7 @@ h2
 .social-item
   margin: 0 0 10px 0
   padding-bottom: 3px
-  @media (min-width: $screen-medium)
+  @media (min-width: 666px)
     display: inline-block
     margin: 0 20px 0 0
     &:last-child
@@ -156,7 +161,6 @@ h2
     font-weight: 700
     letter-spacing: 0.1em
     opacity: 0
-    position: relative
     text-decoration: none
     text-transform: uppercase
     transform: translate3d(0, -1.75em, 0)
