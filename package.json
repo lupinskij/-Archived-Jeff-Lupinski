@@ -13,6 +13,10 @@
     "url": "git://github.com/minamarkham/sassy-starter.git"
   },
   "homepage": "https://minamarkham.github.io/sassy-starter/",
+  "scripts": {
+    "start": "gulp",
+    "deploy": "./ship.sh"
+  },
   "keywords": [
     "sass",
     "scss",
