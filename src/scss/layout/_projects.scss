@@ -1,0 +1,142 @@
+.projects-item {
+  @include clearfix;
+
+  &.alpha {
+    background: #00afcc url(../img/bg-deltadental.png) no-repeat;
+    background-size: cover;
+    height: 550px;
+    margin: 10rem 0 6rem;
+
+    .project-img {
+      bottom: 0;
+      max-width: 400px;
+      position: absolute;
+      right: 0;
+    }
+
+    .projects-text {
+      bottom: 3rem;
+      color: $white;
+      left: 3rem;
+      position: absolute;
+      right: 3rem;
+      z-index: 3;
+    }
+  }
+
+  &.beta {
+    margin: auto;
+    max-width: 62rem;
+    padding: 0 3rem;
+
+    .projects-wrap {
+      width: 50%;
+    }
+
+    .projects-img {
+      background: url(../img/underarmour.jpg) no-repeat;
+      background-size: cover;
+      height: 330px;
+    }
+
+    .projects-text {
+      color: $white;
+      left: 100%;
+      padding: 0 2rem;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  &.gamma {
+    margin-top: -10%;
+    margin: auto;
+    max-width: 62rem;
+    padding-bottom: 6rem;
+    padding: 0 3rem;
+
+    .projects-wrap {
+      float: right;
+      width: 40%;
+    }
+
+    .projects-img {
+      background: url(../img/countr.jpg) no-repeat;
+      background-size: cover;
+      height: 450px;
+    }
+
+    .projects-text {
+      bottom: 0;
+      color: $white;
+      padding: 0 2rem;
+      position: absolute;
+      right: 100%;
+      text-align: right;
+      width: 150%;
+    }
+  }
+
+  &.delta {
+    background: #f5f8fa url(../img/bg-hdms.jpg) no-repeat;
+    background-size: cover;
+    height: 550px;
+    margin: 0 0 6rem;
+
+    .projects-text {
+      bottom: 3rem;
+      color: $dark;
+      left: 3rem;
+      position: absolute;
+      right: 3rem;
+      z-index: 3;
+    }
+
+    .project-img {
+      bottom: 0;
+      max-width: 650px;
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  &.epsilon {
+    margin: auto auto 6rem;
+    max-width: 62rem;
+    padding: 0 3rem;
+
+    .projects-wrap {
+      float: right;
+      width: 40%;
+    }
+
+    .projects-img {
+      background: url(../img/aetna.jpg) no-repeat;
+      background-size: cover;
+      height: 450px;
+    }
+
+    .projects-text {
+      color: $white;
+      padding: 0 2rem;
+      position: absolute;
+      right: 100%;
+      text-align: right;
+      top: 0;
+      width: 120%;
+    }
+  }
+}
+
+.projects-title {
+  font-family: $font-family-display;
+  font-size: rem(50);
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+.projects-type {
+  font-family: $font-family-serif;
+  font-size: rem(16);
+}

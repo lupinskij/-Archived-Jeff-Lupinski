@@ -1,5 +1,5 @@
 npm run build
-cd public
+cd dist
 git init
 git add .
 git commit -m "deploy"

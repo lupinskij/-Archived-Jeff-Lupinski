@@ -1,0 +1,48 @@
+.site-footer {
+  background: $black;
+  padding-bottom: 3rem;
+  padding-top: 6rem;
+}
+
+.site-footer__list {
+  margin-left: 20px;
+  width: 50%;
+}
+
+.site-footer__link {
+  color: $white;
+  display: block;
+  font-family: "alternate-gothic-no-1-d", sans-serif;
+  font-size: 10vw;
+  font-weight: normal;
+  line-height: 1;
+  padding-top: 1.5vw;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s ease-in-out;
+}
+
+.site-footer__item {
+  display: block;
+
+  &:before {
+    background-color: $white;
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 100%;
+    top: 0;
+    transform: translateX(-3.125rem);
+    transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  &:hover:before {
+    right: -18.75rem;
+    transition: right 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  &:hover a {
+    color: $black;
+  }
+}

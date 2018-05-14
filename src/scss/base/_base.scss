@@ -1,0 +1,96 @@
+@viewport { width: device-width; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  position: relative;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+  -moz-osx-font-smoothing: grayscale;
+  -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+  -webkit-font-smoothing: antialiased;
+  box-shadow: 0 0 0 20px $black inset;
+  color: $white;
+  font-family: $font-family-default;
+  text-rendering: optimizeLegibility;
+
+  &:after,
+  &:before {
+    content: '';
+    height: 20px;
+    display: block;
+    background: $black;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
+
+  &:after {
+    bottom: 0;
+    top: unset;
+  }
+}
+
+a {
+  background: transparent;
+  text-decoration: none;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+
+  figure & {
+    display: block;
+    pointer-events: none;
+    width: 100%;
+  }
+}
+
+figure {
+  clear: both;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-display;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: rem(21);
+  line-height: 1.5;
+}
+
+main {
+  height: 100%;
+  overflow: hidden;
+}

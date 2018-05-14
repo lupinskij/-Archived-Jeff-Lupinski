@@ -1,0 +1,10 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Jeff Lupinski
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5, Gulp, JavaScript
