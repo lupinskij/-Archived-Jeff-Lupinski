@@ -1,15 +1,41 @@
 .primary {
-  padding: 2em;
   overflow-y: hidden;
+  padding: 2rem;
+
+  @include mq(30em) {
+    padding: 2rem;
+  }
 }
 
 .site-intro {
-  padding: 0 60px;
+  animation: fade 2s .3s forwards;
+  opacity: 0;
+
+  @include mq(30em) {
+    padding: 0 20px;
+  }
+
+  @include mq(48em) {
+    padding: 0 40px;
+  }
+
+  @include mq(56.25em) {
+    padding: 0 60px;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }
 
 .site-intro__title {
-  font-size: 12vw;
-  line-height: 9.5vw;
+  @include fluid-type(12vw, 70px, 200px)
+  line-height: .8;
   margin: 0;
 
   &--primary {
@@ -18,22 +44,24 @@
 
   &--secondary {
     color: $light;
-    margin-bottom: 6vw;
-    margin-top: 5vw;
-  }
+    margin-bottom: 1rem;
+    margin-top: 2rem;
 
-  &--secondary:before {
-    background: $light;
-    content: "";
-    display: inline-block;
-    height: 1vw;
-    width: 7vw;
-    vertical-align: middle;
+    @include mq(30em) {
+      margin-bottom: 6vw;
+      margin-top: 5vw;
+    }
+
+    @include mq(100em) {
+      margin-bottom: 4rem;
+      margin-top: 4rem;
+    }
   }
 }
 
 .site-intro__about {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
 }
 
@@ -41,9 +69,15 @@
   color: $light;
   font-family: $font-family-serif;
   font-size: rem(16);
-  padding-right: 1em;
+  margin-bottom: 2rem;
   top: 9px;
-  width: 35%;
+  width: 100%;
+
+  @include mq(48em) {
+    margin-bottom: 0;
+    padding-right: 1em;
+    width: 35%;
+  }
 
   a {
     color: $light;
@@ -75,8 +109,13 @@
 }
 
 .site-intro__bio {
-  padding-left: 2em;
-  width: 55%;
+  width: 100%;
+
+  @include mq(48em) {
+    max-width: 68ch;
+    padding-left: 2em;
+    width: 55%;
+  }
 }
 
 .grain {

@@ -1,15 +1,25 @@
 .site-header {
   align-items: center;
-  animation: slide 1s;
+  animation: slide .75s forwards;
   display: flex;
-  margin-bottom: 14vw;
-  margin-top: 2em;
+  flex-wrap: wrap;
+  margin-bottom: 5rem;
+  margin-top: 1rem;
+
+  @include mq(30em) {
+    margin-bottom: 14vw;
+    margin-top: 2.5rem;
+  }
+
+  @include mq(100em) {
+    margin-bottom: 14rem;
+  }
 }
 
 @keyframes slide {
   0% {
     opacity: 0;
-    transform: translate(0, -50%)
+    transform: translate(0, -3em)
   }
   100%{
     opacity: 1;
@@ -18,8 +28,14 @@
 }
 
 .site-nav {
-  margin-left: auto;
-  top: 5px;
+  top: 3rem;
+  width: 100%;
+
+  @include mq(30em) {
+    margin-left: auto;
+    top: 5px;
+    width: auto;
+  }
 }
 
 .site-nav__list {
@@ -28,7 +44,15 @@
 
 .site-nav__item {
   display: inline-block;
-  margin-left: 35px;
+  margin-left: 20px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  @include mq(30em) {
+    margin-left: 35px;
+  }
 }
 
 .site-nav__link {

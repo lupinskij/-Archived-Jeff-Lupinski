@@ -19,28 +19,32 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-smoothing: antialiased;
-  box-shadow: 0 0 0 20px $black inset;
   color: $white;
   font-family: $font-family-default;
   text-rendering: optimizeLegibility;
 
-  &:after,
-  &:before {
-    content: '';
-    height: 20px;
-    display: block;
-    background: $black;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-  }
 
-  &:after {
-    bottom: 0;
-    top: unset;
+  @include mq(30em) {
+    box-shadow: 0 0 0 20px $black inset;
+
+    &:after,
+    &:before {
+      content: '';
+      height: 20px;
+      display: block;
+      background: $black;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+    }
+
+    &:after {
+      bottom: 0;
+      top: unset;
+    }
   }
 }
 

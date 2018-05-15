@@ -13,7 +13,7 @@
   margin: 0 10px;
   max-width: $max-width;
 
-  @include mq(64em) {
+  @include mq(48em) {
     margin: 0 auto;
     width: 88%;
   }
