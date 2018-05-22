@@ -3,16 +3,10 @@
   animation: slide .75s forwards;
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 5rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
 
   @include mq(30em) {
-    margin-bottom: 14vw;
-    margin-top: 2.5rem;
-  }
-
-  @include mq(100em) {
-    margin-bottom: 14rem;
+    margin-top: 4rem;
   }
 }
 
@@ -28,12 +22,12 @@
 }
 
 .site-nav {
-  top: 3rem;
+  top: 2.5rem;
   width: 100%;
 
   @include mq(30em) {
     margin-left: auto;
-    top: 5px;
+    top: 3px;
     width: auto;
   }
 }
@@ -58,18 +52,19 @@
 .site-nav__link {
   color: $light;
   display: inline-block;
-  font-family: $font-family-display;
-  font-size: 20px;
-  font-weight: normal;
+  font-family: $font-family-serif;
+  font-weight: 700;
   text-decoration: none;
-  text-transform: uppercase;
+
+  @include mq(48em) {
+    @include fluid-type(1vw, 14px, 20px);
+  }
 
   &:before {
     content: '';
     display: block;
-    height: 2px;
+    height: 1px;
     left: -10%;
-    margin-top: -2px;
     position: absolute;
     top: 50%;
     transition: width 0s ease, background .4s ease;
@@ -80,8 +75,7 @@
     background: $light;
     content: '';
     display: block;
-    height: 2px;
-    margin-top: -2px;
+    height: 1px;
     position: absolute;
     right: -10%;
     top: 50%;

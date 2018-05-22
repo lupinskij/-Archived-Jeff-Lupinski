@@ -1,48 +1,86 @@
 .site-footer {
-  background: $black;
-  padding-bottom: 3rem;
-  padding-top: 6rem;
+  background-color: rgba($black, .5);
+  margin-top: 100px;
+  padding: 2rem 0 4rem;
+
+  @include mq(700px) {
+    margin-top: 10rem;
+    padding: rem(60) 0 rem(80);
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__follow {
+    margin-top: 1.5rem;
+    width: 100%;
+
+    @include mq(700px) {
+      margin-left: auto;
+      margin-top: 0;
+      width: auto;
+    }
+  }
 }
 
-.site-footer__list {
-  margin-left: 20px;
-  width: 50%;
+.site-footer__header {
+  color: $light;
+  font-family: $font-family-serif;
+  @include fluid-type(.897vw, 14px, 30px);
+  font-weight: 700;
+  letter-spacing: .012em;
+  margin-bottom: rem(25);
+  text-transform: uppercase;
 }
 
 .site-footer__link {
-  color: $light;
-  display: block;
-  font-family: $font-family-display;
-  font-size: 10vw;
-  font-weight: normal;
+  color: $white;
+  display: inline-block;
+  font-family: $font-family-serif;
+  @include fluid-type(1vw, 14px, 30px);
+  font-weight: 700;
   line-height: 1;
-  padding-top: 1.5vw;
+  margin-right: 25px;
   text-decoration: none;
-  text-transform: uppercase;
-  transition: color 0.2s ease-in-out;
-}
 
-.site-footer__item {
-  display: block;
+  &:last-child {
+    margin-right: none;
+  }
 
   &:before {
-    background-color: $orange;
-    bottom: 0;
     content: '';
-    left: 0;
+    display: block;
+    height: 1px;
+    left: -10%;
     position: absolute;
-    right: 100%;
-    top: 0;
-    transform: translateX(-3.125rem);
-    transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+    top: 50%;
+    transition: width 0s ease, background .4s ease;
+    width: 0;
+  }
+
+  &:after {
+    background: $light;
+    content: '';
+    display: block;
+    height: 1px;
+    position: absolute;
+    right: -10%;
+    top: 50%;
+    transition: width .4s ease;
+    width: 0;
   }
 
   &:hover:before {
-    right: -18.75rem;
-    transition: right 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+    background: $light;
+    transition: width .4s ease;
+    width: 120%;
   }
 
-  &:hover a {
-    color: $black;
+  &:hover:after {
+    background: transparent;
+    transition: all 0s ease;
+    width: 120%;
   }
 }

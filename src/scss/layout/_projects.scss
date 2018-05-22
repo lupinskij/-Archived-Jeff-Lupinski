@@ -1,141 +1,240 @@
 .projects-item {
-  @include clearfix;
 
   &.alpha {
-    background: #00afcc url(../img/bg-deltadental.png) no-repeat;
+    background: #1cafca url(../img/deltadental-alt.jpg) no-repeat;
+    background-position: center;
     background-size: cover;
-    height: 550px;
-    margin: 10rem 0 6rem;
+    margin: 5rem 0 3rem;
 
-    .project-img {
-      bottom: 0;
-      max-width: 400px;
-      position: absolute;
-      right: 0;
+    @include mq(48em) {
+      height: 550px;
+      margin: 9rem 0 6rem;
+    }
+
+    @include mq(100em) {
+      margin: 12rem 0 6rem;
+    }
+
+    .projects-wrap {
+
+      @include mq(48em) {
+        bottom: 3rem;
+        left: 3rem;
+        position: absolute;
+        right: 3rem;
+        z-index: 3;
+      }
     }
 
     .projects-text {
-      bottom: 3rem;
       color: $white;
-      left: 3rem;
-      position: absolute;
-      right: 3rem;
-      z-index: 3;
+      padding: 7rem 3rem 6rem;
+
+      @include mq(48em) {
+        padding: 0;
+      }
     }
   }
 
   &.beta {
-    margin: auto;
-    max-width: 62rem;
-    padding: 0 3rem;
+    background: #6BC2B5 url(../img/underarmour.jpg) no-repeat;
+    background-size: cover;
+    margin-bottom: 3rem;
+
+    @include mq(48em) {
+      background: none;
+      margin: auto;
+      max-width: 62rem;
+      padding: 0 3rem;
+    }
 
     .projects-wrap {
-      width: 50%;
+      @include mq(48em) {
+        width: 50%;
+      }
     }
 
     .projects-img {
-      background: url(../img/underarmour.jpg) no-repeat;
-      background-size: cover;
-      height: 330px;
+      @include mq(48em) {
+        background: #6BC2B5 url(../img/underarmour.jpg) no-repeat;
+        background-size: cover;
+        height: 330px;
+      }
     }
 
     .projects-text {
       color: $white;
-      left: 100%;
-      padding: 0 2rem;
-      position: absolute;
-      top: 0;
-      width: 100%;
+      padding: 7rem 3rem 6rem;
+      text-shadow: 0 0 50px rgba(0,0,0,.5);
+
+      @include mq(48em) {
+        left: 100%;
+        padding: 0 2rem;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
     }
   }
 
   &.gamma {
-    margin-bottom: 6rem;
-    margin-top: -10%;
-    max-width: 62rem;
-    padding: 0 3rem;
+    @include clearfix;
+    background: #FC5858 url(../img/countr.jpg) no-repeat;
+    background-size: cover;
+    margin-bottom: 3rem;
+
+    @include mq(48em) {
+      background: none;
+      margin: auto;
+      margin-top: -5%;
+      max-width: 62rem;
+      padding: 0 3rem;
+      padding-bottom: 6rem;
+    }
 
     .projects-wrap {
-      float: right;
-      width: 40%;
+      @include mq(48em) {
+        float: right;
+        width: 40%;
+      }
     }
 
     .projects-img {
-      background: url(../img/countr.jpg) no-repeat;
-      background-size: cover;
-      height: 450px;
+      @include mq(48em) {
+        background: #FC5858 url(../img/countr.jpg) no-repeat;
+        background-size: cover;
+        height: 450px;
+      }
     }
 
     .projects-text {
-      bottom: 0;
       color: $white;
-      padding: 0 2rem;
-      position: absolute;
-      right: 100%;
-      text-align: right;
-      width: 150%;
+      padding: 7rem 3rem 6rem;
+      text-shadow: 0 0 50px rgba(0,0,0,.5);
+
+      @include mq(48em) {
+        bottom: 0;
+        color: $white;
+        padding: 0 2rem;
+        position: absolute;
+        right: 100%;
+        text-align: right;
+        width: 150%;
+      }
     }
   }
 
   &.delta {
-    background: #f5f8fa url(../img/bg-hdms.jpg) no-repeat;
+    @include clearfix;
+    background: #F4F8FB url(../img/hdms.jpg) no-repeat;
+    background-position: center;
     background-size: cover;
-    height: 550px;
-    margin: 0 0 6rem;
+    margin: 0 0 3rem;
 
-    .projects-text {
-      bottom: 3rem;
-      color: $dark;
-      left: 3rem;
-      position: absolute;
-      right: 3rem;
-      z-index: 3;
+    @include mq(48em) {
+      height: 550px;
+      margin: 0 0 6rem;
     }
 
-    .project-img {
-      bottom: 0;
-      max-width: 650px;
-      position: absolute;
-      right: 0;
+    .projects-wrap {
+
+      @include mq(48em) {
+        bottom: 3rem;
+        left: 3rem;
+        position: absolute;
+        right: 3rem;
+        z-index: 3;
+      }
+    }
+
+    .projects-text {
+      color: $dark;
+      padding: 7rem 3rem 6rem;
+
+      @include mq(48em) {
+        padding: 0;
+      }
     }
   }
 
   &.epsilon {
-    margin: auto auto 6rem;
-    max-width: 62rem;
-    padding: 0 3rem;
+    background: #2A3142 url(../img/aetna.jpg) no-repeat;
+    background-size: cover;
+
+    @include mq(48em) {
+      background: none;
+      margin: auto auto 6rem;
+      max-width: 62rem;
+      padding: 0 3rem;
+    }
 
     .projects-wrap {
-      float: right;
-      width: 40%;
+      @include mq(48em) {
+        float: right;
+        width: 40%;
+      }
     }
 
     .projects-img {
-      background: url(../img/aetna.jpg) no-repeat;
-      background-size: cover;
-      height: 450px;
+      @include mq(48em) {
+        background: #2A3142 url(../img/aetna.jpg) no-repeat;
+        background-size: cover;
+        height: 450px;
+      }
     }
 
     .projects-text {
       color: $white;
-      padding: 0 2rem;
-      position: absolute;
-      right: 100%;
-      text-align: right;
-      top: 0;
-      width: 120%;
+      padding: 7rem 3rem 6rem;
+      text-shadow: 0 0 50px rgba(0,0,0,.5);
+
+      @include mq(48em) {
+        padding: 0 2rem;
+        position: absolute;
+        right: 100%;
+        text-align: right;
+        top: 0;
+        width: 120%;
+      }
+    }
+  }
+}
+
+.projects-wrap {
+  perspective: 1000px;
+
+  &:after {
+    background-image: url(../img/noise.png);
+    background-size: 50%;
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+
+    @include mq(48em) {
+      background: none;
     }
   }
 }
 
 .projects-title {
   font-family: $font-family-display;
-  font-size: rem(50);
+  @include fluid-type(3.5vw, 50px, 120px);
   margin-bottom: 0;
   text-transform: uppercase;
 }
 
 .projects-type {
   font-family: $font-family-serif;
-  font-size: rem(16);
+  @include fluid-type(1vw, 16px, 30px);
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.projects-text {
+  z-index: 5;
 }

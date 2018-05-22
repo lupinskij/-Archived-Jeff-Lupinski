@@ -7,10 +7,17 @@
   position: relative;
 }
 
+::selection {
+  background-color: $black;
+  color: white;
+}
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  background-color: $orange;
   box-sizing: border-box;
+  font-size: 16px;
 }
 
 body {
@@ -22,30 +29,6 @@ body {
   color: $white;
   font-family: $font-family-default;
   text-rendering: optimizeLegibility;
-
-
-  @include mq(30em) {
-    box-shadow: 0 0 0 20px $black inset;
-
-    &:after,
-    &:before {
-      content: '';
-      height: 20px;
-      display: block;
-      background: $black;
-      width: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-    }
-
-    &:after {
-      bottom: 0;
-      top: unset;
-    }
-  }
 }
 
 a {
@@ -89,12 +72,48 @@ h6 {
   text-transform: uppercase;
 }
 
-p {
-  font-size: rem(21);
-  line-height: 1.5;
-}
-
 main {
   height: 100%;
   overflow: hidden;
+}
+
+.frame {
+
+  @include mq(48em) {
+    border: 18px solid $black;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+}
+
+.link--inline {
+  color: $light;
+  display: inline-block;
+  margin-top: 1.5em;
+  transition: all 0.2s ease-in-out;
+
+  &:after {
+    background-color: $trans;
+    bottom: -15%;
+    content: '';
+    display: block;
+    height: 20%;
+    position: absolute;
+    transition: all .25s ease;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: $dark;
+
+    &:after {
+      background: $white;
+      height: 130%;
+    }
+  }
 }
